@@ -25,7 +25,7 @@ def index():
         new_subject = request.form.get('subject')
         new_text = request.form['text']
         list_blog = Blog(new_subject, new_text)
-       
+
         db.session.add(list_blog)
         db.session.commit()
 
@@ -45,11 +45,11 @@ def index():
 @app.route('/newpost', methods=['POST', 'GET'])
 def newBlog():
     
-    if request.method == 'POST':
+     if request.method == 'POST':
         id = request.form.get('')
         
 
-    return render_template('addBlog.html', subject = " " , text = " " , pagetitle = "Add A New Blog")
+     return render_template('addBlog.html', pagetitle = "Add A New Blog")
 
 @app.route('/view')
 def viewBlog():
